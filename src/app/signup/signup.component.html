@@ -1,0 +1,45 @@
+<div align="center" style="margin-left: 450px; margin-right: 450px; margin-top: 50px; border: 2px solid blue; ">
+    <h1 align="left" style="margin-left: 70px;"><mat-icon>markunread_mailbox</mat-icon> pointBrag</h1>
+    
+    <h1 align="left" style="margin-left: 70px;">Sign Up.</h1>
+  <p align="left" style="margin-left: 70px;">Instruction text here</p><br><br>
+    <form [formGroup]="form"  class="example-form">
+       
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput name="name" formControlName="name">
+          <mat-error *ngIf="form.get('name')?.hasError('required')">Name is required</mat-error>
+          <mat-error *ngIf="form.get('name')?.hasError('minlength')">Mininimum length is 3</mat-error>
+          <mat-error *ngIf="form.get('name')?.hasError('maxlength')">Maximum length is 15</mat-error>
+          <mat-error *ngIf="form.get('name')?.hasError('pattern')">Invalid input</mat-error>
+        </mat-form-field><br>
+       
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput name="email" formControlName="email">
+          <mat-error *ngIf="form.get('email')?.hasError('required')">Email is required</mat-error>
+          <mat-error *ngIf="form.get('email')?.hasError('pattern')">Email is Invalid</mat-error>
+        </mat-form-field><br>
+       
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput  name="password" type="password" formControlName="password">
+            <mat-error *ngIf="form.get('password')?.hasError('required')">Password is required</mat-error>
+            <mat-error *ngIf="form.get('password')?.hasError('minlength')">Mininimum length is 6</mat-error>
+            <mat-error *ngIf="form.get('password')?.hasError('maxlength')">Maximum length is 15</mat-error>
+        </mat-form-field><br>
+          
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Conform Password</mat-label>
+            <input matInput  name="conf_password" type="password" formControlName="conf_password">
+            <mat-error *ngIf="form.get('conf_password')?.hasError('required')">Password is required</mat-error>
+            <mat-error *ngIf="form.get('conf_password')?.hasError('minlength')">Mininimum length is 6</mat-error>
+            <mat-error *ngIf="form.get('conf_password')?.hasError('maxlength')">Maximum length is 15</mat-error>
+          </mat-form-field><br>
+
+      <button style="width: 70%;" mat-raised-button color="accent" (click)="register()">Register</button><br>
+      <p>Already have an account? <a class="toggle-link">login</a></p>
+      <p><mat-icon>copyright</mat-icon>2023 CompanyName.All rights reserved </p>
+      </form>
+  
+  </div>

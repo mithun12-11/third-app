@@ -1,0 +1,30 @@
+<div align="center" style="margin-left: 450px; margin-right: 450px; margin-top: 50px; border: 2px solid blue; ">
+    <h1 align="left" style="margin-left: 70px;"><mat-icon>markunread_mailbox</mat-icon> pointBrag</h1>
+    
+    <h1 align="left" style="margin-left: 70px;">Log In.</h1>
+  <p align="left" style="margin-left: 70px;">Instruction text here</p><br><br><br>
+    <form [formGroup]="form"  class="example-form">
+       
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput name="email" formControlName="email">
+          <mat-error *ngIf="form.get('email')?.hasError('pattern')">Email is Invalid</mat-error>
+        </mat-form-field><br>
+       
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput  name="Password" formControlName="Password">
+            <mat-error *ngIf="form.get('Password')?.hasError('minlength')">Mininimum length is 6</mat-error>
+            <mat-error *ngIf="form.get('Password')?.hasError('maxlength')">Maximum length is 15</mat-error>
+          </mat-form-field><br>
+          
+      <button style="width: 70%;" mat-raised-button color="accent" (click)="onSubmit()">Login</button><br>
+      <mat-checkbox class="example-margin"><p>Remenber Me</p></mat-checkbox>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="forgotpasw">Forgot Password</a>
+      <p>Not register yet? <a class="toggle-link">Create an account</a></p><br>
+      <p><mat-icon>copyright</mat-icon>2023 CompanyName.All rights reserved </p>
+      </form>
+  
+  </div>
+  
+ 
